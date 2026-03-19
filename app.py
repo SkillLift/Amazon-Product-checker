@@ -12,7 +12,7 @@ from datetime import datetime
 # 1. CONFIGURATION & PAGE SETUP
 # ==========================================
 st.set_page_config(
-    page_title="Amazon Deal Manager Pro",
+    page_title="USA Deals Filter",
     page_icon="💸",
     layout="wide",
     initial_sidebar_state="expanded"
