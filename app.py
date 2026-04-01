@@ -42,8 +42,8 @@ st.markdown("""
 
 # Define Groups and IDs
 GROUPS = {
-    "Get these Deals": "prime-luxury-01-21",
-    "MR": "coolestbarg0c-20"
+    "Taha": "coolestbarg0c-20",
+    "Junaid": "bargainsbasket4-20"
     
 }
 
@@ -81,6 +81,7 @@ def add_affiliate_tag(url, tag):
 def create_shortlink(url):
     api_url = "https://creators.posttap.com/api/create-shortlink"
     
+    # Updated headers based on the new Edge/Chromium curl request
     headers = {
         "accept": "application/json, text/plain, */*",
         "accept-language": "en-US,en;q=0.9",
@@ -88,14 +89,15 @@ def create_shortlink(url):
         "origin": "https://creators.posttap.com",
         "priority": "u=1, i",
         "referer": "https://creators.posttap.com/",
-        "sec-ch-ua": '"Not:A-Brand";v="99", "Microsoft Edge";v="145", "Chromium";v="145"',
+        "sec-ch-ua": '"Chromium";v="146", "Not-A.Brand";v="24", "Microsoft Edge";v="146"',
         "sec-ch-ua-mobile": "?0",
         "sec-ch-ua-platform": '"Windows"',
         "sec-fetch-dest": "empty",
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "same-origin",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0",
-        "cookie": "_ga=GA1.1.202930833.1751362584; curatedby-prime-day=true; btn_hide_help=true; cb-collections-launch-modal=true; _ga_0J5KXPW971=GS2.1.s1759930983$o19$g0$t1759930984$j59$l0$h0; intercom-device-id-esdk9pud=9c3d0119-e327-499a-aa0a-1cb9905c5957; user_notify_geolocation_opt_in=true; btn_logged_in=1; btn_logged_in.sig=Nssey5VTPZtPL4tY0GmKCSWryyI; btn_session=ccb5828d-f666-4b23-bd88-711362f438e8; btn_session.sig=Dnf1hVv2xOP0i4ZR3GXglluY6kY; intercom-session-esdk9pud=eUNuRzJQQmlvaklrVkQrZ3o4WFdNclJrQVhzb0RhdWd4MDZLamh3WkZmZ1RORW5scG9zeHZYVTJOemlRL2Qybm83YlhSMi9WdDY4TFMxcTl0UkpsRDZsV3BnMU5BakVLZG0zQ1RDRkZ5SUtrTnRLb1ZOazg0VXRLOExKK3pkd3Q4L3FVZm44VDVKNk9Pb25hcXIxMXdQV2N1SUhJM3U5WFM1SWo2U285ZmtQVVlHNjU2Yi9mVUN6clp1MTh5cmllMXVMbzBQRGJsTGJwMGMvTElXNjk4UT09LS1XRXRzbjZYS1lWVEF2dFpIWHMzRnhBPT0=--136c1cc4d07b782fc946f4d1b52e6bb6da3c2297"
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+        # Updated cookies
+        "cookie": "_ga=GA1.1.202930833.1751362584; curatedby-prime-day=true; btn_hide_help=true; cb-collections-launch-modal=true; _ga_0J5KXPW971=GS2.1.s1759930983$o19$g0$t1759930984$j59$l0$h0; intercom-device-id-esdk9pud=9c3d0119-e327-499a-aa0a-1cb9905c5957; user_notify_geolocation_opt_in=true; btn_logged_in=1; btn_logged_in.sig=Nssey5VTPZtPL4tY0GmKCSWryyI; btn_session=cff6840c-f9f6-4a0d-af92-6b3391ef69d9; btn_session.sig=B_qOI4i4wPEUHvpB8sK3R-cZcPM; intercom-session-esdk9pud=UGJrcHA0N2JQYjlieXVPVTIxdG9wMTlFaExYRDF1ckJuaG1WeFdBL3RRYXJxem53N2ZSUVRNRGQ0Um5sTy94Q1VJaHVUdmEwY3NYcjJBQUgwelpDMDJ1NTh3bXJIdm1BenNFZ3N4aFFJcUZBVTVRVWh1NFBGckNEWWZ0YnFYSWhyTjRuWVFOUyszbEVLVjRkQ0l1emh6RmxEL1pvRUxhelZiNHJLbjVBQWZsY0hiRnpyRm85ajhjTTVBaUFvZElxM1JUVFVqRG1ZSFhjYzJnTGN1czltQT09LS16N3Nhb0dXWTJDNDAwWVdVYzVPTWN3PT0=--c6e514137b37533165494377fb3a8c7bae949cf6"
     }
 
     data = {
