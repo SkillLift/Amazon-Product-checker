@@ -43,7 +43,8 @@ st.markdown("""
 # Define Groups and IDs
 GROUPS = {
     "Taha": "coolestbarg0c-20",
-    "Junaid": "bargainsbasket4-20"
+    "Junaid": "bargainsbasket4-20",
+    "Waseeq": "wsq-wshlist-20"
     
 }
 
